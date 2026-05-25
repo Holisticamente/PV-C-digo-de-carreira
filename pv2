@@ -755,7 +755,7 @@
     <div class="hero-fold">
 
       <!-- Título -->
-      <h1 class="heading-hero" style="text-align:center;margin-bottom:0;">
+      <h1 class="heading-hero" style="text-align:center;margin-bottom:0;line-height:1.0;">
         Você trabalha.<br>
         Se esforça. Tenta.<br>
         <em style="color:var(--gold)">E ainda sente</em><br>
@@ -763,10 +763,10 @@
       </h1>
 
       <!-- Subtítulo -->
-      <div class="gold-line-center" style="margin-top:12px;"></div>
-      <p class="body-lg" style="text-align:center;max-width:640px;margin:0 auto 16px;font-size:.88rem;">
+      <div class="gold-line-center" style="margin-top:8px;"></div>
+      <p class="body-lg" style="text-align:center;max-width:640px;margin:0 auto 10px;font-size:.84rem;">
         Não é falta de garra. Não é falta de inteligência. É falta de mapa.<br>
-        Descubra seu <strong style="color:var(--cashmere)">Talento Principal</strong>, sua <strong style="color:var(--cashmere)">Direção Estratégica</strong> e o que está <strong style="color:var(--cashmere)">travando seu crescimento</strong> — num diagnóstico individual entregue no seu WhatsApp.
+        Descubra seu <strong style="color:var(--cashmere)">Talento Principal</strong>, sua <strong style="color:var(--cashmere)">Direção Estratégica</strong> e o que está <strong style="color:var(--cashmere)">travando seu crescimento.</strong>
       </p>
 
       <!-- Vídeo -->
@@ -1274,37 +1274,59 @@
       if (!e.data) return;
       try {
         var data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-        // Vturb dispatches currentTime events
-        if (data && (data.currentTime !== undefined || data.type === 'timeupdate')) {
-          var t = data.currentTime || data.time || 0;
-          if (t >= REVEAL_AT) revealPage();
+        if (!data) return;
+        // currentTime direto
+        var t = data.currentTime || data.time || data.current_time || 0;
+        if (t >= REVEAL_AT) { revealPage(); return; }
+        // evento timeupdate
+        if ((data.type === 'timeupdate' || data.event === 'timeupdate') && t >= REVEAL_AT) {
+          revealPage(); return;
         }
-        // Also catch smartplayer events
-        if (data && data.event === 'timeupdate' && data.currentTime >= REVEAL_AT) {
-          revealPage();
+        // evento de progresso percentual (Vturb às vezes envia percent)
+        if (data.percent !== undefined && data.duration) {
+          var secs = (data.percent / 100) * data.duration;
+          if (secs >= REVEAL_AT) { revealPage(); return; }
         }
       } catch(err) {}
     });
 
     // Fallback: poll the video element directly
     function pollVideo() {
+      // Busca todos os elementos video na página e em iframes
       var videos = document.querySelectorAll('video');
       for (var i = 0; i < videos.length; i++) {
-        if (videos[i].currentTime >= REVEAL_AT) {
-          revealPage();
-          return;
+        if (videos[i].currentTime >= REVEAL_AT) { revealPage(); return; }
+      }
+      // Tenta acessar vídeos dentro de shadow DOM do smartplayer
+      var player = document.getElementById('vid-6a149e41ebb41ab91d756c44');
+      if (player) {
+        // Tenta shadow root
+        var sr = player.shadowRoot;
+        if (sr) {
+          var sv = sr.querySelectorAll('video');
+          for (var j = 0; j < sv.length; j++) {
+            if (sv[j].currentTime >= REVEAL_AT) { revealPage(); return; }
+          }
         }
+        // Tenta currentTime direto no elemento
+        if (player.currentTime >= REVEAL_AT) { revealPage(); return; }
       }
-      // Also check vturb smartplayer internal state
-      var player = document.getElementById('vid-6a1029707ea8ec77483edacd');
-      if (player && player.currentTime >= REVEAL_AT) {
-        revealPage();
-        return;
-      }
-      if (!revealed) setTimeout(pollVideo, 1000);
+      // Tenta iframes internos
+      try {
+        var iframes = document.querySelectorAll('iframe');
+        for (var k = 0; k < iframes.length; k++) {
+          try {
+            var ivs = iframes[k].contentDocument.querySelectorAll('video');
+            for (var l = 0; l < ivs.length; l++) {
+              if (ivs[l].currentTime >= REVEAL_AT) { revealPage(); return; }
+            }
+          } catch(e2) {}
+        }
+      } catch(e3) {}
+      if (!revealed) setTimeout(pollVideo, 500);
     }
     // Start polling after player loads
-    setTimeout(pollVideo, 3000);
+    setTimeout(pollVideo, 2000);
   })();
 
   // Scroll reveal

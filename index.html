@@ -57,7 +57,7 @@
 
   .heading-hero {
     font-family:'Cormorant Garamond',serif;
-    font-size:clamp(3rem,7vw,6rem);
+    font-size:clamp(2.2rem,6vw,5rem);
     font-weight:300; line-height:1.05;
     color:var(--cashmere);
   }
@@ -118,7 +118,7 @@
     background:
       radial-gradient(ellipse 60% 50% at 75% 40%, rgba(212,168,83,.10) 0%, transparent 65%),
       var(--oxford);
-    padding:120px 0 80px;
+    padding:60px 0 20px;
   }
 
   .hero-grid {
@@ -712,6 +712,15 @@
   }
 
   /* ── RESPONSIVE ── */
+  @media(max-width:600px){
+    #hero { padding:50px 0 16px; min-height:auto; }
+    .heading-hero { font-size:clamp(1.9rem,8vw,2.8rem); }
+    .hero-fold .body-lg { font-size:.8rem; margin-bottom:10px !important; }
+    .hero-stats { gap:16px; margin-top:10px !important; }
+    .stat-num { font-size:1.5rem; }
+    #vsl-cta-btn { margin-top:14px !important; }
+    #vsl-cta-btn .btn-primary { padding:16px 28px; font-size:.78rem; }
+  }
   @media(max-width:900px){
     .hero-grid,.pain-grid,.story-grid,.receive-grid,.fw-grid,.pillars-grid,.bonus-inner-grid{grid-template-columns:1fr}
     .bonus-img-wrap { text-align:center; }
@@ -767,12 +776,6 @@
   <div class="container">
     <div class="hero-fold">
 
-      <!-- Badge -->
-      <div class="hero-badge" style="justify-content:center;margin-bottom:28px;">
-        <span class="dot"></span>
-        Diagnóstico Estratégico Individual · Entrega via WhatsApp
-      </div>
-
       <!-- Título -->
       <h1 class="heading-hero" style="text-align:center;margin-bottom:0;">
         Você trabalha.<br>
@@ -782,8 +785,8 @@
       </h1>
 
       <!-- Subtítulo -->
-      <div class="gold-line-center" style="margin-top:20px;"></div>
-      <p class="body-lg" style="text-align:center;max-width:640px;margin:0 auto 40px;">
+      <div class="gold-line-center" style="margin-top:12px;"></div>
+      <p class="body-lg" style="text-align:center;max-width:640px;margin:0 auto 16px;font-size:.88rem;">
         Não é falta de garra. Não é falta de inteligência. É falta de mapa.<br>
         Descubra seu <strong style="color:var(--cashmere)">Talento Principal</strong>, sua <strong style="color:var(--cashmere)">Direção Estratégica</strong> e o que está <strong style="color:var(--cashmere)">travando seu crescimento</strong> — num diagnóstico individual entregue no seu WhatsApp.
       </p>
@@ -803,7 +806,7 @@
       <p class="vsl-waiting-msg" id="vsl-waiting-msg">▶ Continue assistindo para liberar o diagnóstico</p>
 
       <!-- Botão de compra — aparece em 7:20 -->
-      <div id="vsl-cta-btn" style="text-align:center;margin-top:32px;opacity:0;pointer-events:none;transition:opacity 1.4s ease;">
+      <div id="vsl-cta-btn" style="text-align:center;margin-top:20px;opacity:0;pointer-events:none;transition:opacity 1.4s ease;">
         <a href="https://payfast.greenn.com.br/redirect/285828" class="btn-primary" style="font-size:.92rem;padding:22px 60px;">
           Quero Meu Diagnóstico Agora →
         </a>
@@ -813,7 +816,7 @@
       </div>
 
       <!-- Stats -->
-      <div class="hero-stats" style="justify-content:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(212,168,83,.15);">
+      <div class="hero-stats" style="justify-content:center;margin-top:16px;padding-top:16px;border-top:1px solid rgba(212,168,83,.15);">
         <div style="text-align:center;"><span class="stat-num">4.000+</span><span class="stat-label">Análises realizadas</span></div>
         <div style="text-align:center;"><span class="stat-num">7</span><span class="stat-label">Anos de método</span></div>
         <div style="text-align:center;"><span class="stat-num">14</span><span class="stat-label">Dias de garantia</span></div>

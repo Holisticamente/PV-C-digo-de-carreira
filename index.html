@@ -713,13 +713,13 @@
 
   /* ── RESPONSIVE ── */
   @media(max-width:600px){
-    #hero { padding:50px 0 16px; min-height:auto; }
-    .heading-hero { font-size:clamp(1.9rem,8vw,2.8rem); }
-    .hero-fold .body-lg { font-size:.8rem; margin-bottom:10px !important; }
-    .hero-stats { gap:16px; margin-top:10px !important; }
+    #hero { padding:44px 0 14px; min-height:auto; }
+    .heading-hero { font-size:clamp(1.9rem,8vw,2.8rem) !important; }
+    .hero-fold .body-lg { font-size:.8rem !important; margin-bottom:8px !important; }
+    .hero-stats { gap:16px; margin-top:8px !important; }
     .stat-num { font-size:1.5rem; }
-    #vsl-cta-btn { margin-top:14px !important; }
-    #vsl-cta-btn .btn-primary { padding:16px 28px; font-size:.78rem; }
+    #vsl-cta-btn { margin-top:12px !important; }
+    #vsl-cta-btn .btn-primary { padding:14px 24px; font-size:.78rem; }
   }
   @media(max-width:900px){
     .hero-grid,.pain-grid,.story-grid,.receive-grid,.fw-grid,.pillars-grid,.bonus-inner-grid{grid-template-columns:1fr}
@@ -768,6 +768,27 @@
     opacity: 0;
   }
 </style>
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '753378899600078');
+    fbq('init', '598467425624772');
+    fbq('init', '794990925250132');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=753378899600078&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=598467425624772&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=794990925250132&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel -->
 </head>
 <body>
 
@@ -785,10 +806,10 @@
       </h1>
 
       <!-- Subtítulo -->
-      <div class="gold-line-center" style="margin-top:12px;"></div>
-      <p class="body-lg" style="text-align:center;max-width:640px;margin:0 auto 16px;font-size:.88rem;">
+      <div class="gold-line-center" style="margin-top:8px;"></div>
+      <p class="body-lg" style="text-align:center;max-width:640px;margin:0 auto 10px;font-size:.84rem;">
         Não é falta de garra. Não é falta de inteligência. É falta de mapa.<br>
-        Descubra seu <strong style="color:var(--cashmere)">Talento Principal</strong>, sua <strong style="color:var(--cashmere)">Direção Estratégica</strong> e o que está <strong style="color:var(--cashmere)">travando seu crescimento</strong> — num diagnóstico individual entregue no seu WhatsApp.
+        Descubra seu <strong style="color:var(--cashmere)">Talento Principal</strong>, sua <strong style="color:var(--cashmere)">Direção Estratégica</strong> e o que está <strong style="color:var(--cashmere)">travando seu crescimento.</strong>
       </p>
 
       <!-- Vídeo -->
@@ -806,7 +827,7 @@
       <p class="vsl-waiting-msg" id="vsl-waiting-msg">▶ Continue assistindo para liberar o diagnóstico</p>
 
       <!-- Botão de compra — aparece em 7:20 -->
-      <div id="vsl-cta-btn" style="text-align:center;margin-top:20px;opacity:0;pointer-events:none;transition:opacity 1.4s ease;">
+      <div id="vsl-cta-btn" style="text-align:center;margin-top:16px;opacity:0;pointer-events:none;transition:opacity 1.4s ease;">
         <a href="https://payfast.greenn.com.br/redirect/285828" class="btn-primary" style="font-size:.92rem;padding:22px 60px;">
           Quero Meu Diagnóstico Agora →
         </a>
@@ -816,7 +837,7 @@
       </div>
 
       <!-- Stats -->
-      <div class="hero-stats" style="justify-content:center;margin-top:16px;padding-top:16px;border-top:1px solid rgba(212,168,83,.15);">
+      <div class="hero-stats" style="justify-content:center;margin-top:14px;padding-top:14px;border-top:1px solid rgba(212,168,83,.15);">
         <div style="text-align:center;"><span class="stat-num">4.000+</span><span class="stat-label">Análises realizadas</span></div>
         <div style="text-align:center;"><span class="stat-num">7</span><span class="stat-label">Anos de método</span></div>
         <div style="text-align:center;"><span class="stat-num">14</span><span class="stat-label">Dias de garantia</span></div>
@@ -1266,7 +1287,7 @@
 <script>
   // ── VIDEO TIME REVEAL (440s = 7min20s) ──────────────────────────────
   (function() {
-    var REVEAL_AT = 280; // segundos — 4:40
+    var REVEAL_AT = 180; // segundos — 3:00
     var revealed = false;
 
     function revealPage() {
@@ -1320,7 +1341,7 @@
         }
       }
       // Also check vturb smartplayer internal state
-      var player = document.getElementById('vid-6a1029707ea8ec77483edacd');
+      var player = document.getElementById('vid-6a1029707ea8ec77483edacd'); // PV1 — ID correto
       if (player && player.currentTime >= REVEAL_AT) {
         revealPage();
         return;

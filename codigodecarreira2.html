@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Você trabalha, se esforça, tenta — e ainda sente que falta algo. Não é falta de garra. É falta de mapa. Descubra seu Talento Principal e sua Direção Estratégica num diagnóstico individual.">
+<meta property="og:title" content="Código de Carreira | Descubra Seu Talento e Sua Direção Estratégica">
+<meta property="og:description" content="Você trabalha, se esforça, tenta — e ainda sente que falta algo. Não é falta de garra. É falta de mapa. Diagnóstico individual com mais de 4.000 análises realizadas.">
+<meta property="og:type" content="website">
+<title>Código de Carreira | Diagnóstico Individual de Carreira — Alex Neri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --oxford:   #282B33;
+    --cashmere: #F0EBE2;
+    --gold:     #E8B84B;
+    --gold-light: #F5CC6A;
+    --gold-dark:  #B08830;
+    --gold-glow:  rgba(232,184,75,0.40);
+    --dark1: #20232A;
+    --dark2: #2C3038;
+    --dark3: #32363F;
+    --white2: #DDD8D0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    background: var(--oxford);
+    color: var(--cashmere);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity:.4; pointer-events:none; z-index:0;
+  }
+  section, header, footer { position:relative; z-index:1; }
+  .container { max-width:1100px; margin:0 auto; padding:0 28px; }
+  .section-pad { padding:100px 0; }
+  .serif { font-family:'Cormorant Garamond',serif; }
+  .gold-text  { color:var(--gold); }
+  .label {
+    font-size:.72rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:14px;
+    display:block;
+  }
+  .heading-hero {
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(2.2rem,6vw,5rem);
+    font-weight:300; line-height:1.05;
+    color:var(--cashmere);
+  }
+  .heading-xl {
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(2.4rem,5vw,4.2rem);
+    font-weight:300; line-height:1.1;
+  }
+  .heading-md {
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(1.6rem,3vw,2.4rem);
+    font-weight:400; line-height:1.2;
+  }
+  .body-lg { font-size:1rem; line-height:1.85; color:var(--white2); font-weight:300; }
+  .body-sm { font-size:.88rem; line-height:1.75; color:var(--white2); font-weight:300; }
+  .gold-line       { width:48px; height:1px; background:var(--gold); margin:20px 0 28px; opacity:.85; }
+  .gold-line-center{ width:48px; height:1px; background:var(--gold); margin:20px auto 28px; opacity:.85; }
+  .btn-primary {
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--gold); color:var(--oxford);
+    font-family:'Montserrat',sans-serif; font-weight:600;
+    font-size:.82rem; letter-spacing:.14em; text-transform:uppercase;
+    padding:18px 44px; border:none; cursor:pointer;
+    text-decoration:none;
+    transition:transform .2s, box-shadow .2s, background .2s;
+    box-shadow:0 0 32px var(--gold-glow);
+  }
+  .btn-primary:hover {
+    background:var(--gold-light);
+    transform:translateY(-2px);
+    box-shadow:0 8px 40px var(--gold-glow);
+  }
+  .btn-outline {
+    display:inline-flex; align-items:center; gap:10px;
+    border:1px solid var(--gold); color:var(--gold);
+    font-family:'Montserrat',sans-serif; font-weight:500;
+    font-size:.78rem; letter-spacing:.12em; text-transform:uppercase;
+    padding:14px 36px; text-decoration:none;
+    transition:all .3s; background:transparent;
+  }
+  .btn-outline:hover { background:var(--gold); color:var(--oxford); }
+  .reveal { opacity:0; transform:translateY(28px); transition:all .7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .reveal-left  { opacity:0; transform:translateX(-32px); transition:all .7s ease; }
+  .reveal-left.visible  { opacity:1; transform:translateX(0); }
+  .reveal-right { opacity:0; transform:translateX(32px); transition:all .7s ease; }
+  .reveal-right.visible { opacity:1; transform:translateX(0); }
+
+  /* HERO */
+  #hero {
+    min-height:100vh;
+    display:flex; align-items:center;
+    background:
+      radial-gradient(ellipse 60% 50% at 75% 40%, rgba(212,168,83,.10) 0%, transparent 65%),
+      var(--oxford);
+    padding:60px 0 20px;
+  }
+  .hero-fold { max-width:800px; margin:0 auto; text-align:center; }
+  .hero-stats {
+    display:flex; gap:32px; margin-top:16px; padding-top:16px;
+    border-top:1px solid rgba(212,168,83,.15);
+    justify-content:center;
+  }
+  .stat-num {
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem; color:var(--gold); display:block; line-height:1;
+  }
+  .stat-label {
+    font-size:.68rem; color:var(--white2);
+    letter-spacing:.1em; text-transform:uppercase; margin-top:3px;
+  }
+
+  /* TICKER */
+  .ticker-wrap {
+    overflow:hidden;
+    background:rgba(212,168,83,.09);
+    border-top:1px solid rgba(212,168,83,.20);
+    border-bottom:1px solid rgba(212,168,83,.20);
+    padding:11px 0;
+  }
+  .ticker-track {
+    display:flex; gap:56px; width:max-content;
+    animation:ticker 22s linear infinite;
+  }
+  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .ticker-item {
+    display:flex; align-items:center; gap:10px;
+    font-size:.68rem; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold); white-space:nowrap;
+  }
+  .ticker-dot { width:3px; height:3px; background:var(--gold); border-radius:50%; }
+
+  /* PAIN */
+  #pain { background:var(--dark2); padding:100px 0; }
+  .pain-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+  .pain-item {
+    display:flex; align-items:flex-start; gap:16px;
+    padding:20px 0; border-bottom:1px solid rgba(255,255,255,.05);
+    opacity:0; transform:translateX(-24px); transition:all .6s ease;
+  }
+  .pain-item.visible { opacity:1; transform:translateX(0); }
+  .pain-x {
+    width:28px; height:28px; flex-shrink:0;
+    border:1px solid rgba(180,60,40,.4);
+    display:flex; align-items:center; justify-content:center;
+    font-size:.75rem; color:rgba(200,80,60,.8); margin-top:2px;
+  }
+  .pain-quote {
+    background:rgba(212,168,83,.08);
+    border-left:2px solid var(--gold);
+    padding:28px 32px; margin-top:32px;
+  }
+  .pain-quote p {
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:1.25rem;
+    line-height:1.6; color:var(--cashmere);
+  }
+  .pain-quote .attr { margin-top:16px; font-size:.72rem; color:var(--gold); letter-spacing:.12em; text-transform:uppercase; }
+
+  /* STORY */
+  #story { background:var(--oxford); padding:100px 0; }
+  .story-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:72px; align-items:center; }
+  .story-photo-box {
+    background:var(--dark2);
+    border:1px solid rgba(212,168,83,.25);
+    aspect-ratio:3/4;
+    display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+  }
+  .story-photo-box::before {
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(135deg,rgba(212,168,83,.08),transparent);
+  }
+  .story-photo-label {
+    position:absolute; bottom:0; left:0; right:0;
+    background:rgba(20,22,24,.92); padding:20px 24px;
+    border-top:1px solid rgba(212,168,83,.25);
+  }
+  .story-credential {
+    display:flex; align-items:center; gap:12px;
+    padding:12px 0; border-bottom:1px solid rgba(255,255,255,.05);
+  }
+  .story-credential-num {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.8rem; color:var(--gold); line-height:1; flex-shrink:0; min-width:60px;
+  }
+  .story-credential-label { font-size:.78rem; color:var(--white2); line-height:1.4; }
+  .story-tag {
+    display:inline-block;
+    background:rgba(212,168,83,.12); border:1px solid rgba(212,168,83,.25);
+    color:var(--gold); font-size:.65rem; letter-spacing:.12em;
+    text-transform:uppercase; padding:5px 12px; margin:3px;
+  }
+
+  /* PILLARS */
+  #pillars { background:var(--dark1); padding:100px 0; }
+  .pillars-grid {
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:2px; margin-top:52px;
+  }
+  .pillar-card {
+    background:var(--dark2);
+    border:1px solid rgba(212,168,83,.12);
+    padding:40px 36px;
+    position:relative; overflow:hidden;
+    transition:all .3s;
+    opacity:0; transform:translateY(20px);
+  }
+  .pillar-card.visible { opacity:1; transform:translateY(0); }
+  .pillar-card:hover { border-color:rgba(212,168,83,.32); background:rgba(232,184,75,0.04); }
+  .pillar-card::after {
+    content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+    background:linear-gradient(90deg,var(--gold),transparent);
+    transform:scaleX(0); transform-origin:left; transition:.4s ease;
+  }
+  .pillar-card:hover::after { transform:scaleX(1); }
+  .pillar-num { font-family:'Cormorant Garamond',serif; font-size:4rem; color:rgba(212,168,83,.16); line-height:1; margin-bottom:16px; }
+  .pillar-title { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--cashmere); margin-bottom:10px; }
+  .pillar-pain { font-size:.78rem; color:var(--gold); opacity:.85; letter-spacing:.06em; margin-bottom:14px; font-style:italic; }
+  .pillar-desc { font-size:.88rem; color:var(--white2); line-height:1.75; }
+
+  /* RECEIVE */
+  #receive { background:var(--oxford); padding:100px 0; }
+  .receive-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .receive-list { list-style:none; margin-top:8px; }
+  .receive-item {
+    display:flex; align-items:flex-start; gap:14px;
+    padding:14px 0; border-bottom:1px solid rgba(255,255,255,.05);
+    font-size:.9rem; color:var(--white2);
+  }
+  .receive-check {
+    width:22px; height:22px; flex-shrink:0;
+    border:1px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-size:.65rem; color:var(--gold); margin-top:1px;
+  }
+  .receive-module-num { font-family:'Cormorant Garamond',serif; font-size:.85rem; color:var(--gold); flex-shrink:0; min-width:28px; }
+  .delivery-box {
+    background:rgba(212,168,83,.09);
+    border:1px solid rgba(212,168,83,.32);
+    padding:36px; margin-top:0;
+    position:relative;
+  }
+  .delivery-box::before {
+    content:''; position:absolute; top:0;left:0;right:0; height:2px;
+    background:linear-gradient(90deg,var(--gold),transparent);
+  }
+  .delivery-step-title { font-size:.9rem;font-weight:500;color:var(--cashmere);margin-bottom:4px; }
+
+  /* BONUS */
+  #bonus { background:var(--oxford); padding:80px 0; }
+  .bonus-box {
+    max-width:860px; margin:0 auto;
+    background:linear-gradient(135deg,rgba(212,168,83,.12),rgba(232,184,75,0.04));
+    border:1px solid rgba(212,168,83,.36);
+    padding:52px; position:relative; overflow:hidden;
+  }
+  .bonus-box::before {
+    content:''; position:absolute; top:0;left:0;right:0; height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent);
+  }
+  .bonus-badge {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--gold); color:var(--oxford);
+    font-size:.68rem; font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; padding:6px 14px; margin-bottom:24px;
+  }
+  .reset-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:28px; }
+  .reset-step { background:rgba(26,28,32,.8); border:1px solid rgba(212,168,83,.20); padding:18px 12px; text-align:center; }
+  .reset-letter { font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold); line-height:1; margin-bottom:6px; }
+  .reset-label { font-size:.65rem; color:var(--white2); line-height:1.4; letter-spacing:.04em; }
+  .bonus-inner-grid {
+    display:grid; grid-template-columns:1fr 200px; gap:32px; align-items:center; margin-top:28px;
+  }
+  .bonus-img-wrap img { width:100%;height:auto;max-width:200px;border:1px solid rgba(212,168,83,.32);border-radius:4px;display:block; }
+
+  /* TESTIMONIALS */
+  #testimonials { background:var(--dark1); padding:100px 0; overflow:hidden; }
+  .marquee-wrap { overflow:hidden; margin-top:48px; }
+  .marquee-track {
+    display:flex; gap:20px; width:max-content;
+    animation:marquee 32s linear infinite;
+  }
+  .marquee-track:hover { animation-play-state:paused; }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .testi-card {
+    width:300px; flex-shrink:0;
+    background:var(--dark2);
+    border:1px solid rgba(212,168,83,.16);
+    padding:28px;
+  }
+  .testi-quote { font-family:'Cormorant Garamond',serif; font-size:2.5rem; color:var(--gold); opacity:.35; line-height:1; margin-bottom:-6px; }
+  .testi-stars { color:var(--gold); font-size:.65rem; letter-spacing:3px; margin-bottom:10px; }
+  .testi-text { font-size:.84rem; color:var(--white2); line-height:1.75; margin-bottom:18px; }
+  .testi-author { display:flex; align-items:center; gap:10px; }
+  .testi-avatar {
+    width:34px; height:34px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(135deg,var(--gold-dark),var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:.75rem; color:var(--oxford);
+  }
+  .testi-name { font-size:.78rem; font-weight:600; color:var(--cashmere); }
+  .testi-handle { font-size:.68rem; color:var(--gold); opacity:.6; }
+
+  /* HOW */
+  #how { background:var(--dark2); padding:100px 0; }
+  .steps { position:relative; max-width:680px; margin:52px auto 0; }
+  .steps-line {
+    position:absolute; left:31px; top:0; bottom:0; width:1px;
+    background:linear-gradient(180deg,var(--gold),rgba(212,168,83,.14));
+  }
+  .step {
+    display:flex; gap:36px; padding:28px 0 28px 88px;
+    position:relative;
+    opacity:0; transform:translateX(-20px); transition:all .6s ease;
+  }
+  .step.visible { opacity:1; transform:translateX(0); }
+  .step-circle {
+    position:absolute; left:0;
+    width:62px; height:62px;
+    border:1.5px solid var(--gold); background:var(--oxford);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold);
+  }
+  .step h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--cashmere); margin-bottom:6px; }
+  .step p { font-size:.88rem; color:var(--white2); line-height:1.75; }
+
+  /* FOR WHOM */
+  #forwhom { background:var(--oxford); padding:100px 0; }
+  .fw-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px; }
+  .fw-box { padding:40px; }
+  .fw-yes { background:rgba(212,168,83,.08); border:1px solid rgba(212,168,83,.25); }
+  .fw-no  { background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.05); }
+  .fw-label { font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin-bottom:24px; display:flex; align-items:center; gap:10px; }
+  .fw-yes .fw-label { color:var(--gold); }
+  .fw-no  .fw-label { color:rgba(255,255,255,.25); }
+  .fw-item { display:flex; align-items:flex-start; gap:12px; margin-bottom:14px; font-size:.88rem; color:var(--white2); line-height:1.55; }
+  .fw-icon { flex-shrink:0; margin-top:2px; font-size:.75rem; }
+
+  /* OFFER */
+  #offer {
+    background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(212,168,83,.09) 0%,transparent 70%),var(--dark1);
+    padding:100px 0;
+  }
+  .offer-box {
+    max-width:740px; margin:0 auto;
+    background:linear-gradient(145deg,rgba(212,168,83,.12),rgba(232,184,75,0.03));
+    border:1px solid rgba(212,168,83,.38);
+    padding:60px; position:relative; overflow:hidden;
+  }
+  .offer-box::before {
+    content:''; position:absolute; top:0;left:0;right:0; height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent);
+  }
+  .offer-corner { position:absolute; width:20px; height:20px; border-color:var(--gold); border-style:solid; opacity:.4; }
+  .offer-corner.tl{top:12px;left:12px;border-width:1px 0 0 1px}
+  .offer-corner.tr{top:12px;right:12px;border-width:1px 1px 0 0}
+  .offer-corner.bl{bottom:12px;left:12px;border-width:0 0 1px 1px}
+  .offer-corner.br{bottom:12px;right:12px;border-width:0 1px 1px 0}
+  .price-anchor { font-size:.78rem; color:rgba(255,255,255,.28); letter-spacing:.1em; text-transform:uppercase; text-decoration:line-through; text-align:center; margin-bottom:4px; }
+  .price-main {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(3.8rem,10vw,6.5rem);
+    color:var(--gold); text-align:center; line-height:1; font-weight:700;
+    text-shadow:0 2px 40px rgba(212,168,83,.2);
+  }
+  .price-currency { font-family:'Montserrat',sans-serif; font-size:0.28em; font-weight:500; vertical-align:super; letter-spacing:.06em; opacity:.75; margin-right:2px; }
+  .price-cents { font-family:'Montserrat',sans-serif; font-size:0.22em; font-weight:400; vertical-align:super; letter-spacing:.04em; opacity:.65; margin-left:1px; }
+  .price-sub { font-size:.78rem; color:var(--white2); text-align:center; margin-top:8px; letter-spacing:.05em; }
+  .includes { list-style:none; margin:36px 0; }
+  .includes li { display:flex; align-items:center; gap:14px; padding:13px 0; border-bottom:1px solid rgba(255,255,255,.04); font-size:.9rem; color:var(--white2); }
+  .inc-check { width:20px; height:20px; flex-shrink:0; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:.62rem; color:var(--gold); }
+
+  /* GUARANTEE */
+  #guarantee { background:var(--dark2); padding:80px 0; }
+  .guarantee-box {
+    max-width:680px; margin:0 auto;
+    display:flex; gap:36px; align-items:flex-start;
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(255,255,255,.06);
+    padding:48px;
+  }
+  .guarantee-shield {
+    flex-shrink:0; width:80px; height:80px;
+    border:1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.8rem;
+    animation:shieldGlow 3s ease-in-out infinite;
+  }
+  @keyframes shieldGlow { 0%,100%{box-shadow:0 0 20px rgba(212,168,83,.20)} 50%{box-shadow:0 0 40px rgba(232,184,75,0.47)} }
+  .guarantee-title { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold); margin-bottom:10px; }
+
+  /* FAQ */
+  #faq { background:var(--oxford); padding:100px 0; }
+  .faq-list { max-width:740px; margin:48px auto 0; }
+  .faq-item { border-bottom:1px solid rgba(255,255,255,.06); }
+  .faq-q {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:22px 0; cursor:pointer;
+    font-size:.95rem; font-weight:500; color:var(--cashmere);
+    gap:20px; transition:color .3s;
+  }
+  .faq-q:hover { color:var(--gold); }
+  .faq-arrow {
+    width:26px; height:26px; flex-shrink:0;
+    border:1px solid rgba(212,168,83,.38);
+    display:flex; align-items:center; justify-content:center;
+    font-size:.9rem; color:var(--gold); transition:transform .3s;
+  }
+  .faq-item.open .faq-arrow { transform:rotate(45deg); }
+  .faq-a { max-height:0; overflow:hidden; transition:max-height .4s ease, padding .3s ease; }
+  .faq-item.open .faq-a { max-height:220px; padding-bottom:20px; }
+  .faq-a p { font-size:.88rem; color:var(--white2); line-height:1.85; }
+
+  /* FINAL CTA */
+  #final-cta {
+    background:radial-gradient(ellipse 60% 80% at 50% 100%,rgba(212,168,83,.14) 0%,transparent 60%),var(--dark1);
+    padding:120px 0; text-align:center;
+  }
+
+  /* FOOTER */
+  footer {
+    background:var(--oxford);
+    border-top:1px solid rgba(255,255,255,.05);
+    padding:40px 0; text-align:center;
+  }
+  .footer-brand { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--gold); letter-spacing:.2em; margin-bottom:10px; }
+  .footer-text { font-size:.72rem; color:rgba(255,255,255,.2); line-height:1.8; }
+
+  /* STICKY BAR */
+  .sticky-bar {
+    position:fixed; bottom:0; left:0; right:0;
+    background:rgba(20,22,24,.96);
+    border-top:1px solid rgba(212,168,83,.25);
+    padding:12px 24px;
+    display:flex; align-items:center; justify-content:center; gap:20px;
+    z-index:1000; backdrop-filter:blur(20px);
+    transform:translateY(100%); transition:transform .4s ease;
+  }
+  .sticky-bar.visible { transform:translateY(0); }
+  .sticky-text { font-size:.8rem; color:var(--white2); }
+
+  /* PAGE CONTENT — visível por padrão */
+  #page-content { opacity:1; pointer-events:all; }
+
+  /* RESPONSIVE */
+  @media(max-width:600px){
+    #hero { padding:50px 0 16px; min-height:auto; }
+    .heading-hero { font-size:clamp(1.9rem,8vw,2.8rem); }
+    .hero-fold .body-lg { font-size:.8rem; margin-bottom:10px !important; }
+    .hero-stats { gap:16px; margin-top:10px !important; }
+    .stat-num { font-size:1.5rem; }
+    #vsl-cta-btn { margin-top:14px !important; }
+    #vsl-cta-btn .btn-primary { padding:16px 28px; font-size:.78rem; }
+  }
+  @media(max-width:900px){
+    .pain-grid,.story-grid,.receive-grid,.fw-grid,.pillars-grid,.bonus-inner-grid{grid-template-columns:1fr}
+    .bonus-img-wrap { text-align:center; }
+    .bonus-img-wrap img { max-width:180px; margin:0 auto; }
+    .offer-box{padding:36px 24px}
+    .guarantee-box{flex-direction:column;align-items:center;text-align:center;padding:36px 24px}
+    .reset-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:600px){
+    .reset-grid{grid-template-columns:1fr 1fr}
+    .fw-grid,.pillars-grid{grid-template-columns:1fr}
+  }
+</style>
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '753378899600078');
+    fbq('init', '598467425624772');
+    fbq('init', '794990925250132');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=753378899600078&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=598467425624772&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=794990925250132&ev=PageView&noscript=1"/>
+  </noscript>
+</head>
+<body data-rsssl=1>
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-fold">
+      <h1 class="heading-hero" style="text-align:center;margin-bottom:0;line-height:1.0;">
+        Você trabalha.<br>
+        Se esforça. Tenta.<br>
+        <em style="color:var(--gold)">E ainda sente</em><br>
+        <em style="color:var(--gold)">que falta algo.</em>
+      </h1>
+      <div class="gold-line-center" style="margin-top:8px;"></div>
+      <p class="body-lg" style="text-align:center;max-width:640px;margin:0 auto 10px;font-size:.84rem;">
+        Não é falta de garra. Não é falta de inteligência. É falta de mapa.<br>
+        Descubra seu <strong style="color:var(--cashmere)">Talento Principal</strong>, sua <strong style="color:var(--cashmere)">Direção Estratégica</strong> e o que está <strong style="color:var(--cashmere)">travando seu crescimento.</strong>
+      </p>
+      <!-- Vídeo -->
+      <div class="vsl-video-wrap">
+        <vturb-smartplayer id="vid-6a149e41ebb41ab91d756c44" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>
+        <script type="text/javascript">
+          var s=document.createElement("script");
+          s.src="https://scripts.converteai.net/9dcb220f-523b-41f4-a6da-6e0c61a2addb/players/6a149e41ebb41ab91d756c44/v4/player.js";
+          s.async=!0;
+          document.head.appendChild(s);
+        </script>
+      </div>
+      <!-- Botão de compra — aparece aos 3:00 -->
+      <div id="vsl-cta-btn" style="text-align:center;margin-top:20px;opacity:0;pointer-events:none;transition:opacity 1.4s ease;">
+        <a href="https://payfast.greenn.com.br/redirect/285828" class="btn-primary" style="font-size:.92rem;padding:22px 60px;">
+          Quero Meu Diagnóstico Agora →
+        </a>
+        <p style="margin-top:14px;font-size:.72rem;color:rgba(255,255,255,.28);letter-spacing:.06em;">
+          🔒 Confidencial &nbsp;·&nbsp; 📲 PDF via WhatsApp &nbsp;·&nbsp; 🛡️ Garantia 14 dias
+        </p>
+      </div>
+      <!-- Stats -->
+      <div class="hero-stats">
+        <div style="text-align:center;"><span class="stat-num">4.000+</span><span class="stat-label">Análises realizadas</span></div>
+        <div style="text-align:center;"><span class="stat-num">7</span><span class="stat-label">Anos de método</span></div>
+        <div style="text-align:center;"><span class="stat-num">14</span><span class="stat-label">Dias de garantia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="page-content">
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>+4.000 análises realizadas</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>PDF entregue via WhatsApp</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Talento Principal</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Direção Estratégica</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Linha do Tempo e Ciclos</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Pontos de Bloqueio</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Plano de 90 Dias</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Garantia 14 Dias</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>+4.000 análises realizadas</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>PDF entregue via WhatsApp</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Talento Principal</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Direção Estratégica</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Linha do Tempo e Ciclos</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Pontos de Bloqueio</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Plano de 90 Dias</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Garantia 14 Dias</span>
+  </div>
+</div>
+<!-- PAIN -->
+<section id="pain">
+  <div class="container">
+    <div class="pain-grid">
+      <div class="reveal-left">
+        <span class="label">Você se reconhece aqui?</span>
+        <h2 class="heading-xl">
+          Você tenta.<br>
+          <span style="color:rgba(229,224,216,.3);">Começa bem.</span><br>
+          <span style="color:rgba(229,224,216,.3);">E a sensação</span><br>
+          volta.
+        </h2>
+        <div class="gold-line"></div>
+        <ul style="list-style:none;">
+          <li class="pain-item"><div class="pain-x">✕</div><p class="body-sm">Já mudou de emprego, de área ou de curso — e a sensação de <strong style="color:var(--cashmere)">não se encaixar voltou</strong> em todos</p></li>
+          <li class="pain-item"><div class="pain-x">✕</div><p class="body-sm">Sente que está <strong style="color:var(--cashmere)">desperdiçando seu potencial</strong> — mas não sabe exatamente o quê</p></li>
+          <li class="pain-item"><div class="pain-x">✕</div><p class="body-sm">Olha para outras pessoas com propósito claro e se pergunta por que com você <strong style="color:var(--cashmere)">é diferente</strong></p></li>
+          <li class="pain-item"><div class="pain-x">✕</div><p class="body-sm">Quando começa algo novo, a animação dura meses — e então <strong style="color:var(--cashmere)">aquela sensação volta</strong></p></li>
+          <li class="pain-item"><div class="pain-x">✕</div><p class="body-sm"><strong style="color:var(--cashmere)">Não sabe o que realmente quer</strong> — e isso pesa mais do que qualquer cansaço físico</p></li>
+        </ul>
+      </div>
+      <div class="reveal-right">
+        <div class="pain-quote">
+          <p>"Você não está faltando esforço. Está faltando direção. E direção certa muda tudo."</p>
+          <div class="attr">— Alex Neri</div>
+        </div>
+        <div style="margin-top:28px;padding:32px;background:rgba(232,184,75,0.05);border:1px solid rgba(212,168,83,.14);">
+          <h3 class="heading-md" style="color:var(--cashmere);margin-bottom:14px;">A causa real</h3>
+          <p class="body-sm">Imagina que você precisa chegar a um endereço em São Paulo. Mas alguém te entregou um mapa de Curitiba. Quanto mais rápido você andar, mais longe do destino você fica.</p>
+          <p class="body-sm" style="margin-top:12px;">A sensação de não se encaixar não é um defeito de fábrica. É o sintoma de quem opera sem o mapa certo. Esse mapa existe — e ele já está escrito em você.</p>
+          <div style="margin-top:24px;">
+            <a href="#offer" class="btn-outline" style="font-size:.75rem;padding:12px 22px;">Quero Ler Meu Código →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ALEX STORY -->
+<section id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="reveal-left">
+        <div class="story-photo-box">
+          <img src="alex-neri.jpg" alt="Alex Neri" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0;">
+          <div class="story-photo-label">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--cashmere);">Alex Neri</div>
+            <div style="font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">Estrategista de Carreira · Fundador</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;">
+          <div class="story-credential"><div class="story-credential-num">4.000+</div><div class="story-credential-label">análises realizadas individualmente</div></div>
+          <div class="story-credential"><div class="story-credential-num">7</div><div class="story-credential-label">anos desenvolvendo e aplicando o método</div></div>
+          <div class="story-credential"><div class="story-credential-num">3</div><div class="story-credential-label">empresas fundadas — todas ativas e sólidas</div></div>
+        </div>
+        <div style="margin-top:16px;display:flex;flex-wrap:wrap;">
+          <span class="story-tag">SBT</span><span class="story-tag">Honda</span><span class="story-tag">Vivo</span><span class="story-tag">Makro</span><span class="story-tag">→ Empreendedor</span>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <span class="label">Quem é Alex Neri</span>
+        <h2 class="heading-xl" style="margin-bottom:6px;">
+          Eu passei <em style="color:var(--gold);">17 anos</em><br>
+          usando o mapa errado.
+        </h2>
+        <div class="gold-line"></div>
+        <p class="body-lg" style="margin-bottom:20px;">Durante 17 anos trabalhei em CLT — SBT, Honda, Vivo, Makro. Empresas grandes. Do tipo que impressiona no currículo. E em todas elas eu sentia o mesmo: aquela animação de começo que durava seis meses. E então voltava. A inquietação. A sensação de estar no lugar errado.</p>
+        <p class="body-lg" style="margin-bottom:20px;">Por dentro, eu me achava burro. Incompetente. Todo mundo parecia se encaixar — eu não.</p>
+        <p class="body-lg" style="margin-bottom:20px;">Aos 35 anos, pela primeira vez, decidi ouvir a minha própria essência. Pedi demissão. Com esposa, filho pequeno e todas as responsabilidades. E foi aí que tudo mudou.</p>
+        <p class="body-lg" style="margin-bottom:28px;">Descobri que eu não era burro. Estava simplesmente usando o mapa de outra pessoa. Nos últimos 7 anos, abri 3 empresas, todas sólidas. E apliquei esse mesmo diagnóstico em mais de 4.000 pessoas — com um resultado que se repete: clareza, direção, movimento.</p>
+        <div style="background:rgba(212,168,83,.09);border-left:2px solid var(--gold);padding:22px 26px;">
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--cashmere);line-height:1.6;">"Eu sei o que é ter todo o esforço do mundo e estar usando o mapa errado. E sei o que muda quando você finalmente lê o seu."</p>
+          <div style="margin-top:12px;font-size:.7rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;">— Alex Neri, 42 anos. Casado. Pai do Lucca.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="label">O Método</span>
+      <h2 class="heading-xl">Os <em style="color:var(--gold);">4 Pilares</em><br>do seu Código</h2>
+      <div class="gold-line-center"></div>
+      <p class="body-lg" style="max-width:580px;margin:0 auto;">Seu diagnóstico mapeia os quatro vetores da sua trajetória — cada um revelando uma camada que impacta diretamente suas decisões, seu crescimento e sua direção profissional.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Talento Principal</div>
+        <div class="pillar-pain">"Faço de tudo e não sei no que sou realmente bom."</div>
+        <p class="pillar-desc">O padrão de funcionamento que gera mais resultado com menos desgaste. Não é o que você aprendeu — é o que você é. O que sempre pareceu óbvio demais para você, mas que para o mundo ao redor é extraordinário.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Direção Estratégica</div>
+        <div class="pillar-pain">"Trabalho muito mas não avanço. Parece que corro em círculos."</div>
+        <p class="pillar-desc">A trajetória com maior probabilidade de retorno para o seu perfil. Duas pessoas com o mesmo talento podem ter resultados completamente diferentes — porque a direção determina onde aquele talento gera mais retorno.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Linha do Tempo e Ciclos</div>
+        <div class="pillar-pain">"Por que tudo parece mais difícil agora? Por que não é meu momento?"</div>
+        <p class="pillar-desc">Existe um relógio interno na sua trajetória. Cada fase da vida tem sua própria frequência, seu próprio tema. Quando você opera fora do seu tempo — até as decisões certas dão errado. Não é azar. É descompasso identificável.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">04</div>
+        <div class="pillar-title">Pontos de Bloqueio</div>
+        <div class="pillar-pain">"Sei o que preciso fazer, mas algo me trava. Parece que me autossaboto."</div>
+        <p class="pillar-desc">O padrão interno que gera medo, travamento e aquela sensação de andar em círculos. Não é falta de força de vontade. É uma configuração específica — identificável com precisão. Quando você a vê com clareza, ela perde o poder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- RECEIVE -->
+<section id="receive">
+  <div class="container">
+    <div class="receive-grid">
+      <div class="reveal-left">
+        <span class="label">O que você recebe</span>
+        <h2 class="heading-xl" style="margin-bottom:6px;">
+          Um PDF completo.<br>
+          <em style="color:var(--gold);">Entregue via WhatsApp.</em>
+        </h2>
+        <div class="gold-line"></div>
+        <p class="body-lg" style="margin-bottom:28px;">Após o pagamento você recebe um formulário estratégico de 8 minutos. Alex analisa seu perfil individualmente e entrega o diagnóstico completo em PDF diretamente no seu WhatsApp em até 3 dias úteis.</p>
+        <ul class="receive-list">
+          <li class="receive-item"><div class="receive-check">✓</div><span><span class="receive-module-num">01.</span> Talento Principal — seu padrão de maior geração de valor</span></li>
+          <li class="receive-item"><div class="receive-check">✓</div><span><span class="receive-module-num">02.</span> Direção Estratégica — a trajetória de maior retorno para seu perfil</span></li>
+          <li class="receive-item"><div class="receive-check">✓</div><span><span class="receive-module-num">03.</span> Pontos de Bloqueio — o que está travando seu crescimento e suas decisões</span></li>
+          <li class="receive-item"><div class="receive-check">✓</div><span><span class="receive-module-num">04.</span> Linha do Tempo e Ciclos — o timing natural da sua trajetória</span></li>
+          <li class="receive-item"><div class="receive-check">✓</div><span><span class="receive-module-num">05.</span> Calendário Pessoal — termômetro mensal mês a mês</span></li>
+          <li class="receive-item" style="border-bottom:none;"><div class="receive-check" style="border-color:var(--gold);background:rgba(212,168,83,.14);">✓</div><span style="color:var(--gold);font-weight:500;"><span class="receive-module-num" style="color:var(--gold);">06.</span> Plano de 90 Dias — roteiro semana a semana baseado no seu perfil</span></li>
+        </ul>
+      </div>
+      <div class="reveal-right">
+        <div class="delivery-box">
+          <span class="label">Como funciona a entrega</span>
+          <div>
+            <div style="display:flex;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.05);">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);line-height:1;flex-shrink:0;min-width:32px;">1</div>
+              <div><div class="delivery-step-title">Você compra e preenche o formulário</div><div class="body-sm">Formulário estratégico de 8 minutos. Quanto mais preciso, mais certeiro é o seu mapa.</div></div>
+            </div>
+            <div style="display:flex;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.05);">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);line-height:1;flex-shrink:0;min-width:32px;">2</div>
+              <div><div class="delivery-step-title">Alex analisa seu perfil</div><div class="body-sm">Diagnóstico individual — não é gerado por algoritmo</div></div>
+            </div>
+            <div style="display:flex;gap:20px;padding:20px 0;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);line-height:1;flex-shrink:0;min-width:32px;">3</div>
+              <div><div class="delivery-step-title">Recebe o PDF no WhatsApp</div><div class="body-sm">Entrega em até 3 dias úteis diretamente no seu número</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- BONUS -->
+<section id="bonus">
+  <div class="container">
+    <div class="bonus-box reveal">
+      <div class="bonus-badge">✦ Bônus Incluído</div>
+      <h2 class="heading-xl" style="margin-bottom:8px;">
+        Protocolo <em style="color:var(--gold);">R.E.S.E.T.™</em>
+      </h2>
+      <div class="gold-line"></div>
+      <p class="body-lg" style="max-width:620px;margin-bottom:28px;">
+        Para quem está travado, sem clareza, sem energia para decidir nada. Cinco etapas para interromper o ciclo de ansiedade e recuperar a clareza em <strong style="color:var(--cashmere);">90 segundos.</strong>
+      </p>
+      <div class="bonus-inner-grid">
+        <div>
+          <div class="reset-grid" style="margin-top:0;">
+            <div class="reset-step"><div class="reset-letter">R</div><div class="reset-label">Reconhecer o gatilho emocional</div></div>
+            <div class="reset-step"><div class="reset-letter">E</div><div class="reset-label">Esvaziar a resposta de luta-ou-fuga</div></div>
+            <div class="reset-step"><div class="reset-letter">S</div><div class="reset-label">Sincronizar o estado interno</div></div>
+            <div class="reset-step"><div class="reset-letter">E</div><div class="reset-label">Executar com clareza plena</div></div>
+            <div class="reset-step"><div class="reset-letter">T</div><div class="reset-label">Travar com âncoras neurais</div></div>
+          </div>
+        </div>
+        <div class="bonus-img-wrap">
+          <img src="reset-protocol.png" alt="Protocolo R.E.S.E.T.">
+        </div>
+      </div>
+      <p class="body-sm" style="margin-top:20px;color:var(--gold);">Incluso gratuitamente junto ao seu diagnóstico.</p>
+    </div>
+  </div>
+</section>
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="label">Resultados Reais</span>
+      <h2 class="heading-xl">O que <em style="color:var(--gold);">eles disseram</em></h2>
+      <div class="gold-line-center"></div>
+    </div>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Estou impressionada com meu mapa! Foram tantas informações preciosas — todas confirmam exatamente o que se passa em minha vida. Me instruíram como melhorar. É extenso, completo, totalmente confiável.</p><div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Adriana do Carmo</div><div class="testi-handle">Cliente</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Fiz depois de muita resistência. Mas foi uma das melhores experiências que já me aconteceu. Achei muito incrível meu mapa.</p><div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Rodrigo</div><div class="testi-handle">Cliente</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Amei o meu mapa. Fiquei impressionada com tudo que li e não canso de ler. Já estou aplicando as orientações — as coisas já começaram a fluir e oportunidades estão surgindo.</p><div class="testi-author"><div class="testi-avatar">K</div><div><div class="testi-name">Kelly</div><div class="testi-handle">Cliente</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Seu trabalho é incrível. O que você me entregou foi muito além do que eu esperava. Só tenho a agradecer.</p><div class="testi-author"><div class="testi-avatar">C</div><div><div class="testi-name">Claudia</div><div class="testi-handle">Cliente</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Adorei e descobri muito sobre a minha caminhada. Hoje entendo o que estou passando. Tenho certeza que você está ajudando muitas pessoas.</p><div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Moreira</div><div class="testi-handle">Cliente</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Estou impressionada com meu mapa! Foram tantas informações preciosas — todas confirmam exatamente o que se passa em minha vida. É extenso, completo, totalmente confiável.</p><div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Adriana do Carmo</div><div class="testi-handle">Cliente</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Fiz depois de muita resistência. Mas foi uma das melhores experiências que já me aconteceu. Achei muito incrível meu mapa.</p><div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Rodrigo</div><div class="testi-handle">Cliente</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Amei o meu mapa. Fiquei impressionada com tudo que li e não canso de ler. Já estou aplicando as orientações — as coisas já começaram a fluir e oportunidades estão surgindo.</p><div class="testi-author"><div class="testi-avatar">K</div><div><div class="testi-name">Kelly</div><div class="testi-handle">Cliente</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Seu trabalho é incrível. O que você me entregou foi muito além do que eu esperava. Só tenho a agradecer.</p><div class="testi-author"><div class="testi-avatar">C</div><div><div class="testi-name">Claudia</div><div class="testi-handle">Cliente</div></div></div></div>
+      <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Adorei e descobri muito sobre a minha caminhada. Hoje entendo o que estou passando. Tenho certeza que você está ajudando muitas pessoas.</p><div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Moreira</div><div class="testi-handle">Cliente</div></div></div></div>
+    </div>
+  </div>
+</section>
+<!-- HOW -->
+<section id="how">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="label">Como funciona</span>
+      <h2 class="heading-xl">Simples. <em style="color:var(--gold);">Rápido. Preciso.</em></h2>
+      <div class="gold-line-center"></div>
+    </div>
+    <div class="steps">
+      <div class="steps-line"></div>
+      <div class="step">
+        <div class="step-circle">1</div>
+        <div><h3>Você compra e preenche o formulário estratégico</h3><p class="body-sm">Após a confirmação do pagamento, você recebe um formulário de 8 minutos. Quanto mais preciso você for, mais certeiro será o seu mapa.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-circle">2</div>
+        <div><h3>Alex analisa seu perfil individualmente</h3><p class="body-sm">Não é um algoritmo. Alex analisa seu código biográfico com o método que aplicou em mais de 4.000 pessoas — produzindo um diagnóstico exclusivo para você.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <div><h3>Você recebe o PDF no WhatsApp</h3><p class="body-sm">Em até 3 dias úteis, o diagnóstico completo chega diretamente no seu WhatsApp em formato PDF — para ler, salvar e revisitar quantas vezes quiser.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-circle">4</div>
+        <div><h3>Você tem 14 dias de garantia incondicional</h3><p class="body-sm">Se em 14 dias você não sentir que recebeu o diagnóstico mais preciso da sua trajetória, Alex devolve 100% do valor. Sem perguntas. Sem burocracia.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FOR WHOM -->
+<section id="forwhom">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="label">Para quem é</span>
+      <h2 class="heading-xl">Este diagnóstico <em style="color:var(--gold);">é para você?</em></h2>
+      <div class="gold-line-center"></div>
+    </div>
+    <div class="fw-grid">
+      <div class="fw-box fw-yes reveal-left">
+        <div class="fw-label">✦ Sim, é para você se...</div>
+        <div class="fw-item"><div class="fw-icon" style="color:var(--gold);">→</div><span>Já mudou de emprego ou área mais de uma vez sem encontrar paz</span></div>
+        <div class="fw-item"><div class="fw-icon" style="color:var(--gold);">→</div><span>Sente que está desperdiçando seu potencial mas não sabe exatamente como mudar isso</span></div>
+        <div class="fw-item"><div class="fw-icon" style="color:var(--gold);">→</div><span>Não sabe o que realmente quer fazer — e isso pesa mais que qualquer cansaço físico</span></div>
+        <div class="fw-item"><div class="fw-icon" style="color:var(--gold);">→</div><span>Começa coisas novas com animação que some em poucos meses</span></div>
+        <div class="fw-item"><div class="fw-icon" style="color:var(--gold);">→</div><span>Quer entender seu Talento Principal e parar de desperdiçar energia fora do seu padrão</span></div>
+        <div class="fw-item"><div class="fw-icon" style="color:var(--gold);">→</div><span>Está pronto para parar de usar o mapa de outra pessoa — e ler o seu</span></div>
+      </div>
+      <div class="fw-box fw-no reveal-right">
+        <div class="fw-label" style="color:rgba(255,255,255,.2);">✕ Não é para você se...</div>
+        <div class="fw-item"><div class="fw-icon" style="color:rgba(255,255,255,.2);">—</div><span style="color:rgba(255,255,255,.35);">Está buscando uma fórmula genérica de "como ganhar dinheiro rápido"</span></div>
+        <div class="fw-item"><div class="fw-icon" style="color:rgba(255,255,255,.2);">—</div><span style="color:rgba(255,255,255,.35);">Não está disposto a ler e aplicar o que o diagnóstico revelar</span></div>
+        <div class="fw-item"><div class="fw-icon" style="color:rgba(255,255,255,.2);">—</div><span style="color:rgba(255,255,255,.35);">Espera que um relatório substitua o esforço e as decisões necessárias</span></div>
+        <div class="fw-item"><div class="fw-icon" style="color:rgba(255,255,255,.2);">—</div><span style="color:rgba(255,255,255,.35);">Está em busca de algo místico, esotérico ou de "resposta do universo"</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- OFFER -->
+<section id="offer">
+  <div class="container">
+    <div class="offer-box reveal">
+      <div class="offer-corner tl"></div>
+      <div class="offer-corner tr"></div>
+      <div class="offer-corner bl"></div>
+      <div class="offer-corner br"></div>
+      <div style="text-align:center;margin-bottom:8px;">
+        <span class="label">Seu investimento hoje</span>
+        <h2 class="heading-xl" style="margin-bottom:4px;">Diagnóstico<br><em style="color:var(--gold);">Código de Carreira</em></h2>
+        <div class="gold-line-center"></div>
+      </div>
+      <div style="font-size:.72rem;color:rgba(255,255,255,.25);text-align:center;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">Por 7 anos disponível apenas em particular</div>
+      <div class="price-anchor">Diagnóstico com estrategista sênior: R$2.000 a R$30.000</div>
+      <div class="price-main"><span class="price-currency">R$</span>197<span class="price-cents">,00</span></div>
+      <div class="price-sub">pagamento único · formulário liberado imediatamente após confirmação</div>
+      <ul class="includes">
+        <li><div class="inc-check">✓</div>Talento Principal — seu ativo de maior geração de valor</li>
+        <li><div class="inc-check">✓</div>Direção Estratégica — o GPS da sua trajetória profissional</li>
+        <li><div class="inc-check">✓</div>Pontos de Bloqueio — o que está travando seu crescimento e suas decisões</li>
+        <li><div class="inc-check">✓</div>Linha do Tempo e Ciclos — o timing certo para cada decisão</li>
+        <li><div class="inc-check">✓</div>Calendário Pessoal — termômetro mensal para os próximos 12 meses</li>
+        <li><div class="inc-check">✓</div>Plano de 90 Dias — roteiro semana a semana baseado no seu perfil</li>
+        <li style="border:none;"><div class="inc-check" style="border-color:var(--gold);background:rgba(212,168,83,.14);">✓</div><span style="color:var(--gold);font-weight:500;">BÔNUS GRÁTIS: Protocolo R.E.S.E.T.™ <span style="font-weight:300;font-size:.85em;">(valor R$97)</span> — Para quando o mapa chegar e o medo de agir aparecer. Clareza em 90 segundos.</span></li>
+      </ul>
+      <div style="text-align:center;">
+        <a href="https://payfast.greenn.com.br/redirect/285828" class="btn-primary" style="font-size:.88rem;padding:20px 56px;">
+          Quero Meu Diagnóstico Agora →
+        </a>
+        <p style="margin-top:14px;font-size:.72rem;color:rgba(255,255,255,.25);letter-spacing:.06em;">
+          🔒 Pagamento seguro &nbsp;·&nbsp; 📲 PDF via WhatsApp &nbsp;·&nbsp; 🛡️ Garantia 14 dias
+        </p>
+        <p style="margin-top:12px;font-size:.78rem;color:var(--white2);opacity:.7;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6;">
+          O risco é inteiramente meu. Se em 14 dias você não sentir que valeu — devolvo 100%. Sem formulário. Sem perguntas.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- GUARANTEE -->
+<section id="guarantee">
+  <div class="container">
+    <div class="guarantee-box reveal">
+      <div class="guarantee-shield">🛡️</div>
+      <div>
+        <div class="guarantee-title">Garantia de 14 dias</div>
+        <p class="body-sm" style="margin-bottom:14px;">Se em 14 dias você não sentir que recebeu o diagnóstico mais preciso sobre sua trajetória profissional, Alex devolve 100% do valor.</p>
+        <p class="body-sm">Sem formulário. Sem perguntas. Sem precisar explicar o motivo. O risco é inteiramente de Alex — não seu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="label">Dúvidas Frequentes</span>
+      <h2 class="heading-xl">Perguntas <em style="color:var(--gold);">e respostas</em></h2>
+      <div class="gold-line-center"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">O que exatamente eu recebo? <div class="faq-arrow">+</div></div>
+        <div class="faq-a"><p>Você recebe um PDF completo com 6 módulos: Talento Principal, Direção Estratégica, Pontos de Bloqueio, Linha do Tempo e Ciclos, Calendário Pessoal e Plano de 90 Dias semana a semana. Mais o Protocolo R.E.S.E.T.™ como bônus. Tudo entregue via WhatsApp em até 3 dias úteis.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Como funciona a entrega? <div class="faq-arrow">+</div></div>
+        <div class="faq-a"><p>Após a confirmação do pagamento, você recebe um formulário estratégico de 8 minutos. Alex analisa seu perfil individualmente — não é gerado por algoritmo — e envia o PDF diretamente no seu WhatsApp em até 3 dias úteis.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Precisa de algum conhecimento prévio? <div class="faq-arrow">+</div></div>
+        <div class="faq-a"><p>Não. O diagnóstico é explicado em linguagem clara e acessível. Você não precisa de nenhum conhecimento específico — só precisa estar disposto a ler e refletir sobre o que o mapa revela.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">É para alguém que já tem uma carreira estabelecida? <div class="faq-arrow">+</div></div>
+        <div class="faq-a"><p>Serve para qualquer pessoa entre 18 e 60 anos que sente que ainda não encontrou sua direção — seja no início da vida profissional, no meio de uma transição ou depois de anos numa carreira que não satisfaz plenamente.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E se eu não ficar satisfeito? <div class="faq-arrow">+</div></div>
+        <div class="faq-a"><p>Você tem 14 dias de garantia incondicional após receber o PDF. Se por qualquer motivo não sentir que valeu, basta entrar em contato e Alex devolve 100% do valor. Sem perguntas, sem burocracia.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Isso tem relação com astrologia ou misticismo? <div class="faq-arrow">+</div></div>
+        <div class="faq-a"><p>Não. O Diagnóstico Código de Carreira é baseado em análise biográfica técnica — não em crenças religiosas, astrologia ou qualquer prática esotérica. O método produz um diagnóstico estratégico do seu perfil, não previsões ou julgamentos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FINAL CTA -->
+<section id="final-cta">
+  <div class="container">
+    <div class="reveal" style="max-width:680px;margin:0 auto;">
+      <span class="label" style="text-align:center;display:block;">Uma última coisa</span>
+      <h2 class="heading-xl" style="text-align:center;margin-bottom:16px;">
+        Cada ano com o<br>
+        <em style="color:var(--gold);">mapa errado</em><br>
+        é um ano que<br>
+        não se acumula.
+      </h2>
+      <div class="gold-line-center"></div>
+      <p class="body-lg" style="text-align:center;margin-bottom:36px;">Eu passei 17. Não por falta de esforço — por falta de direção. Você não precisa passar mais nenhum.</p>
+      <div style="text-align:center;">
+        <a href="https://payfast.greenn.com.br/redirect/285828" class="btn-primary" style="font-size:.88rem;padding:20px 56px;">Descobrir Meu Código Agora →</a>
+        <p style="margin-top:14px;font-size:.72rem;color:rgba(255,255,255,.25);">R$197 · PDF via WhatsApp · Garantia 14 dias</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-brand">Código de Carreira</div>
+    <p class="footer-text">
+      © 2025 Código de Carreira · Alex Neri · Todos os direitos reservados<br>
+      Este produto não garante resultados financeiros específicos. Os depoimentos são experiências individuais.
+    </p>
+  </div>
+</footer>
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-text">Descubra seu Talento Principal e pare de trabalhar fora do seu padrão.</span>
+  <a href="https://payfast.greenn.com.br/redirect/285828" class="btn-primary" style="font-size:.75rem;padding:12px 28px;">Quero Meu Diagnóstico — R$197 →</a>
+</div>
+<script>
+  // VIDEO TIME REVEAL — botão aparece aos 3:00
+  (function() {
+    var REVEAL_AT = 180;
+    var revealed = false;
+    function revealCTA() {
+      if (revealed) return;
+      revealed = true;
+      var btn = document.getElementById('vsl-cta-btn');
+      if (btn) { btn.style.opacity = '1'; btn.style.pointerEvents = 'all'; }
+    }
+    window.addEventListener('message', function(e) {
+      if (!e.data) return;
+      try {
+        var data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (!data) return;
+        var t = data.currentTime || data.time || data.current_time || 0;
+        if (t >= REVEAL_AT) { revealCTA(); return; }
+        if ((data.type === 'timeupdate' || data.event === 'timeupdate') && t >= REVEAL_AT) { revealCTA(); return; }
+        if (data.percent !== undefined && data.duration) {
+          if ((data.percent / 100) * data.duration >= REVEAL_AT) { revealCTA(); return; }
+        }
+      } catch(err) {}
+    });
+    function pollVideo() {
+      var videos = document.querySelectorAll('video');
+      for (var i = 0; i < videos.length; i++) {
+        if (videos[i].currentTime >= REVEAL_AT) { revealCTA(); return; }
+      }
+      var player = document.getElementById('vid-6a149e41ebb41ab91d756c44');
+      if (player && player.currentTime >= REVEAL_AT) { revealCTA(); return; }
+      try {
+        var iframes = document.querySelectorAll('iframe');
+        for (var k = 0; k < iframes.length; k++) {
+          try {
+            var ivs = iframes[k].contentDocument.querySelectorAll('video');
+            for (var l = 0; l < ivs.length; l++) {
+              if (ivs[l].currentTime >= REVEAL_AT) { revealCTA(); return; }
+            }
+          } catch(e2) {}
+        }
+      } catch(e3) {}
+      if (!revealed) setTimeout(pollVideo, 500);
+    }
+    setTimeout(pollVideo, 2000);
+  })();
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold:.12 });
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.pain-item,.step,.pillar-card').forEach(el => observer.observe(el));
+  document.querySelectorAll('.pillar-card').forEach((card, i) => { card.style.transitionDelay = `${i * 0.12}s`; });
+  const stickyBar = document.getElementById('stickyBar');
+  window.addEventListener('scroll', () => { stickyBar.classList.toggle('visible', window.scrollY > 600); });
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  document.querySelectorAll('.pain-item').forEach((item, i) => { item.style.transitionDelay = `${i * 0.1}s`; });
+  document.querySelectorAll('.step').forEach((step, i) => { step.style.transitionDelay = `${i * 0.15}s`; });
+</script>
+</div><!-- end #page-content -->
+</body>
+</html>
